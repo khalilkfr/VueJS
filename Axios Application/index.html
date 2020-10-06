@@ -17,20 +17,20 @@
     <div id="app">
       <h2>Bitcoin Price: </h2>
 
-<div v-for="(currency, index) in data.bpi" class="frame">
+<div class="frame">
 	
-	<div class="card card-1">
-		<div class="card-top">{{currency.description}} / {{currency.symbol}}</div>
+	<div v-for="(currency, index) in data.bpi" class="card card-1">
+		<div class="card-top">{{currency.description}}</div>
 		<div class="card-info">
 			<div class="card-cost">
-				<div class="card-value">{{currency.rate_float}}</div>
+				<div class="card-value">{{currency.rate}}</div>
 				<div class="card-month">Code : {{currency.code}}</div>
 			</div>
 			<div class="card-lines">
-				<div class="card-line" style="width: 80px;"></div>
-				<div class="card-line" style="width: 50px;"></div>
+				<div class="card-line" style="/* width: 80px; */font-size: xx-small;">{{ data.time.updated }}</div>
+				<!-- <div class="card-line" style="width: 50px;"></div>
 				<div class="card-line" style="width: 90px;"></div>
-				<div class="card-line" style="width: 70px;"></div>
+				<div class="card-line" style="width: 70px;"></div> -->
 			</div>
 		</div>
 	</div>
