@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD App</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> -->
+  </head>
+  <body class="container">
+  <div id="app">
+     <h2>VueJS CRUD Application</h2>
+      <hr>
+  <p><button type="button" data-toggle="modal" data-target="#modalAdd" class="btn btn-primary" > New User</button></p>
+  <table  class="table table-bordred">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr  v-for="(person, index) in persons">
+          <td>
+            {{person.id}}
+          </td>
+          <td>
+            {{person.Firstname}}
+          </td>
+          <td>
+            {{person.Lastname}}
+          </td>
+          <td>
+            {{person.Email}}
+          </td>
+          <td>
+            <button id="editUser" data-toggle="modal" data-target="#modalEdit" @click="sendInfo(person)" class="btn-small btn-warning">Edit</button>
+            <button id="deleteUser" v-on:click="deleteUser(index)" type="button" class="btn-small btn-danger">Delete</button>   
+          </td>
+        </tr>
+      </tbody>
+  
+
+  <div class="modal" id="modalEdit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit User</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <input type="text" v-model="selectedPerson.Firstname" class="form-control" placeholder="Firstname">
+          <input type="text" v-model="selectedPerson.Lastname" class="form-control" placeholder="Lastname">
+          <input type="email" v-model="selectedPerson.Email" class="form-control" placeholder="Email">
+          <button class="btn-small btn-warning" v-on:click="editUser(selectedPerson)">
+            Edit
+          </button>
+
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modalAdd">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add User</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <input type="text" v-model="selectedPerson.Firstname" class="form-control" placeholder="Firstname">
+          <input type="text" v-model="selectedPerson.Lastname" class="form-control" placeholder="Lastname">
+          <input type="email" v-model="selectedPerson.Email" class="form-control" placeholder="Email">
+          <button class="btn-small btn-primary" v-on:click="addUser(selectedPerson)">
+            ADD
+          </button>
+
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+</table>
+</div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
