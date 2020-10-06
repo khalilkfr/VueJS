@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #f8f8f8;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  height: 85%;
+  width: 88%;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.4);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.card:first-child {
+  margin-left: 1rem;
+}
+.card:nth-child(3) {
+  margin-right: 1rem;
+}
+.card > * {
+  transition: all 0.3s ease-in-out;
+}
+.card:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+.card:hover .card-top {
+  background: #d64000;
+}
+.card:hover .card-value {
+  color: #d64000;
+}
+.card-1:hover ~ .bars > .stat > .bar-1 > span {
+  width: 10%;
+}
+.card-1:hover ~ .bars > .stat > .bar-2 > span {
+  width: 10%;
+}
+.card-1:hover ~ .bars > .stat > .bar-3 > span {
+  width: 10%;
+}
+.card-2:hover ~ .bars > .stat > .bar-1 > span {
+  width: 30%;
+}
+.card-2:hover ~ .bars > .stat > .bar-2 > span {
+  width: 60%;
+}
+.card-2:hover ~ .bars > .stat > .bar-3 > span {
+  width: 40%;
+}
+.card-3:hover ~ .bars > .stat > .bar-1 > span {
+  width: 100%;
+}
+.card-3:hover ~ .bars > .stat > .bar-2 > span {
+  width: 100%;
+}
+.card-3:hover ~ .bars > .stat > .bar-3 > span {
+  width: 100%;
+}
+.card-top {
+  height: 25%;
+  width: 100%;
+  background: #ff773d;
+  color: white;
+  font-weight: 600;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-info {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-info > * {
+  text-align: center;
+}
+.card-cost {
+  margin-bottom: 1rem;
+}
+.card-value {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.card-month {
+  font-size: 0.8rem;
+}
+.card-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-line {
+  margin-bottom: 3px;
+  height: 4px;
+  background: #e0e0e0;
+}
+
+.bars {
+  height: 85%;
+  width: 95%;
+  background: white;
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.2);
+  grid-column: 1 / -1;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.stat {
+  padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+}
+.stat-info {
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.stat-bar {
+  height: 12px;
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 0.5rem;
+}
+.stat-bar > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #ff773d;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}

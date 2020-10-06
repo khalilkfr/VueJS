@@ -8,13 +8,39 @@
 
     
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="style.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> -->
   </head>
   <body class="container">
     <div id="app">
-      {{ info }}
+      <h2>Bitcoin Price: </h2>
+      code: "EUR"
+description: "Euro"
+rate: "9,102.2030"
+rate_float: 9102.203
+symbol: "&euro;"
+
+<div v-for="(currency, index) in data.bpi" class="frame">
+	
+	<div class="card card-1">
+		<div class="card-top">{{currency.description}} / {{currency.symbol}}</div>
+		<div class="card-info">
+			<div class="card-cost">
+				<div class="card-value">{{currency.rate_float}}</div>
+				<div class="card-month">per month</div>
+			</div>
+			<div class="card-lines">
+				<div class="card-line" style="width: 80px;"></div>
+				<div class="card-line" style="width: 50px;"></div>
+				<div class="card-line" style="width: 90px;"></div>
+				<div class="card-line" style="width: 70px;"></div>
+			</div>
+		</div>
+	</div>
+
+</div>
     </div>
     <script src="index.js"></script>
   </body>
